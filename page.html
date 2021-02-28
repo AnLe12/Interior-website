@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!-- Thi Hoai An, Le (000798006)
+
+    Lab3 - PartB
+
+    I, Thi Hoai An Le, student number 000798006, certify that this material is my original work.
+    No other person's work has been used without due acknowledgment and I have not made my work available to anyone else.
+
+    Feb 20, 2021 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3b: Responsive Design with Twitter Bootstrap</title>
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 300;
+            color: #5C5C5C;
+        }
+
+        /* Carousel */
+        .carousel-caption{
+            height: 150px;
+            display: block;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: left;
+            float:left;
+            bottom: 0;
+            left: 0;
+        }
+        .carousel-item.active, .carousel-item .view {
+            height: 50vh;
+        }
+
+        .carousel-item img {
+            object-fit: cover;
+            width:100%;
+            height: 100%;
+        }
+
+        /* Content */
+        .imageContentDesktop{
+            display: block;
+            height: 100%;
+            box-shadow: 10px 10px 20px -4px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin: 2em 0;
+        }
+        .imageContentMobile{
+            display: none;
+            
+        }
+        @media only screen and (max-width: 768px){
+            .imageContentDesktop{
+                display: none;
+            }
+            .imageContentMobile{
+                display: block;
+                height: 100%;
+                box-shadow: 0 0 0 0;
+                border-radius: 0;
+                margin: 2em 0;
+                
+            }
+        }
+         /* Footer */
+         footer {
+                background: #4D4D4D;
+                padding: 40px;
+                color: #C2C2C2;
+                margin:0;
+            }
+
+            footer a {
+                color: white;
+                text-decoration: none;
+            }
+            footer .address img {
+                margin-bottom: 30px;
+            }
+            
+    </style>
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><img src="images/openhouse-logo.svg" alt="OpenHouse logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" aria-current="page" href="index.html">About</a>
+              <a class="nav-link" href="page.html">Team</a>
+              <a class="nav-link" href="post.html">Blog</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img id="hero" src="images/hero-image.jpg" class="d-md-block w-100" height="350px" alt="background image">
+            <div class="container">
+              <div class="carousel-caption text-start col-md-5">
+                <h1>About</h1>
+              </div>
+            </div>>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+    
+    <div class="container">
+        <h1 class="headerContent">OpenHouse&trade; is all about doing the thing that you like the most</h1>
+
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet dui ac ex pulvinar fermentum eu auctor ex. Vestibulum at euismod dui. Etiam quis nisi quis est sagittis sollicitudin id in ipsum. Nulla euismod quis ex in egestas. Sed pulvinar cursus metus, in ultricies eros venenatis in. Vestibulum ut quam pulvinar sapien ornare pellentesque. Sed sed sagittis nunc, eget efficitur turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce euismod vitae tortor quis facilisis. Aenean vel fringilla massa. Cras faucibus lectus id semper scelerisque.</p>
+        <p class="text">Integer quis elementum libero, sed egestas dui. Phasellus quis mauris dignissim, rhoncus nulla eu, malesuada dui. Praesent eu nulla fermentum, imperdiet turpis sit amet, aliquet enim. Mauris gravida justo quis sem tincidunt, id auctor libero lacinia. </p>
+        <img class="imageContentDesktop" src="images/interior-page-photo.jpg" width="100%" height="auto">
+    </div>
+    <div class="container-fluid px-0">
+        <div class="content">
+            <img class="imageContentMobile" src="images/interior-page-photo.jpg" width="100%" height="auto">
+        </div>
+    </div>
+
+    <div class="container"></div>
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet dui ac ex pulvinar fermentum eu auctor ex. Vestibulum at euismod dui. Etiam quis nisi quis est sagittis sollicitudin id in ipsum. Nulla euismod quis ex in egestas. Sed pulvinar cursus metus, in ultricies eros venenatis in. Vestibulum ut quam pulvinar sapien ornare pellentesque. Sed sed sagittis nunc, eget efficitur turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce euismod vitae tortor quis facilisis. Aenean vel fringilla massa. Cras faucibus lectus id semper scelerisque.</p>
+
+        <p class="text">Integer quis elementum libero, sed egestas dui. Phasellus quis mauris dignissim, rhoncus nulla eu, malesuada dui. Praesent eu nulla fermentum, imperdiet turpis sit amet, aliquet enim. Mauris gravida justo quis sem tincidunt, id auctor libero lacinia. 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet dui ac ex pulvinar fermentum eu auctor ex. Vestibulum at euismod dui. Etiam quis nisi quis est sagittis sollicitudin id in ipsum. Nulla euismod quis ex in egestas. Sed pulvinar cursus metus, in ultricies eros venenatis in. Vestibulum ut quam pulvinar sapien ornare pellentesque. Sed sed sagittis nunc, eget efficitur turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce euismod vitae tortor quis facilisis. Aenean vel fringilla massa. Cras faucibus lectus id semper scelerisque.
+        </p>
+        <p class="text">Integer quis elementum libero, sed egestas dui. Phasellus quis mauris dignissim, rhoncus nulla eu, malesuada dui. Praesent eu nulla fermentum, imperdiet turpis sit amet, aliquet enim. Mauris gravida justo quis sem tincidunt, id auctor libero lacinia. 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet dui ac ex pulvinar fermentum eu auctor ex. Vestibulum at euismod dui. Etiam quis nisi quis est sagittis sollicitudin id in ipsum. Nulla euismod quis ex in egestas. Sed pulvinar cursus metus, in ultricies eros venenatis in. Vestibulum ut quam pulvinar sapien ornare pellentesque. Sed sed sagittis nunc, eget efficitur turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce euismod vitae tortor quis facilisis. Aenean vel fringilla massa. Cras faucibus lectus id semper scelerisque.
+        </p>
+        <p class="text">Integer quis elementum libero, sed egestas dui. Phasellus quis mauris dignissim, rhoncus nulla eu, malesuada dui. Praesent eu nulla fermentum, imperdiet turpis sit amet, aliquet enim. Mauris gravida justo quis sem tincidunt, id auctor libero lacinia. </p>
+
+    </div>
+
+    <footer>
+        <div class="row">
+            <div class="col-md-3">
+                    <div class="address">
+                        <img src="images/openhouse-logo.svg" width="140" height="auto" alt="OpenHouse logo">
+                        <div>
+                            123 Main Street,<br>Hamilton, Ontario<br>L9A 2W6
+                        </div>
+                    </div>
+                </div>
+
+            <div class="col-md-6 mt-md-3">
+                <div class="navigation">
+                    <nav>
+                        <div class="col-md-6 mb-3"><a href="#">About</a></div>
+                        <div class="col-md-6 mb-3"><a href="#">Team</a></div>   
+                        <div class="col-md-6 mb-3"><a href="#">Blog</a></div>
+                    </nav>
+                    <div class="col-md-6 mt-3">
+                        <div class="row">
+                            <div class="social">
+                                <a href="#"><img src="images/instagram.svg" width="24" height="auto" alt="Instagram icon"></a>
+                                <a href="#"><img src="images/facebook.svg" width="24" height="auto" alt="Facebook icon"></a>
+                                <a href="#"><img src="images/twitter.svg" width="24" height="auto" alt="Twitter icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

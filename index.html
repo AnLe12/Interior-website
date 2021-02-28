@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<!-- Thi Hoai An, Le (000798006)
+
+    Lab3 - PartB
+
+    I, Thi Hoai An Le, student number 000798006, certify that this material is my original work.
+    No other person's work has been used without due acknowledgment and I have not made my work available to anyone else.
+
+    Feb 20, 2021 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3b: Responsive Design with Twitter Bootstrap</title>
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 300;
+            color: #5C5C5C;
+        }
+
+        /* Carousel */
+        .carousel-caption{
+            height: 250px;
+            display: block;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: left;
+            float:left;
+            left: 5%;
+            top: 30%;
+            
+        }
+
+        /* Intro */
+        
+        .introBox{
+            overflow: visible;
+        }
+        .photo-desktop, .photo-mobile{
+            box-shadow: 10px 10px 20px -4px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            max-width: 500px;
+
+        }
+
+        
+        .text, .header-desktop{
+            margin-bottom: 1.5em;
+            margin-right: 100px;
+        }
+        .header-mobile{
+            display: none;
+        }
+        .photo-mobile{
+            display: none;
+        }
+        .photo-desktop{
+            margin: 0 -1em ;
+        }
+        @media only screen and (max-width: 768px){
+            .header-desktop{
+                display: none;
+            }
+            .header-mobile{
+                display: block;
+            }
+            .photo-desktop{
+                display: none;
+            }
+            .photo-mobile{
+                display: block;
+                margin-left: -50%;
+                max-width: fit-content;
+                max-height: 500px;
+                position: absolute;
+                z-index: 0;
+                overflow: hidden;
+            }
+            
+            .header-mobile{
+                text-align: center;
+                margin: auto;
+                margin-bottom: 2em;
+            }
+            .intro{
+                display:block;
+                top: 1em;
+                padding:0.5em 0.5em;
+                border-radius: 10px;
+                position: relative;
+                float: left;
+                z-index: 1;
+                background-color: white;
+                opacity: 90%;
+                left:35%;
+                width: 65%;
+                margin-bottom: 2em;
+            }
+            .text{
+                margin-right: 0;
+            }
+            
+        }
+
+
+        /* Feature */
+            .headerFeature {
+                padding: 1em 0 1em 0;
+                text-align: center;
+            }
+
+            .feature {
+                justify-self: center;
+                width: 100%;
+            }
+
+            .feature .feature-image {
+                align-content: center;
+                display: flex;
+                justify-content: center;
+                border: 1px solid rgba(0, 0, 0, 0.3);
+                border-radius: 10px;
+                padding: 40px;
+            }
+
+            .feature .feature-image img {
+                max-width: 146px;
+                max-height: 146px;
+            }
+
+            .feature .feature-copy {
+                color: rgba(0, 0, 0, 0.3);
+                padding: 10px;
+                text-align: center;
+                font-weight: 400;
+            }
+
+            @media only screen and (max-width: 768px){
+                .feature{
+                    width:100%;
+                }
+                
+            }
+
+            /* Sign up form */
+            .container .signup-form h1{
+                text-align: center;
+                margin: 2em 2em 2em 0;
+            }
+            .container .signup-form p{
+                margin: 1em 2em 1em 0;
+            }
+            .form-group{
+                margin-right: 2em;
+            }
+            /* Footer */
+            footer {
+                background: #4D4D4D;
+                padding: 40px;
+                color: #C2C2C2;
+                margin:0;
+            }
+
+            footer a {
+                color: white;
+                text-decoration: none;
+            }
+            footer .address img {
+                margin-bottom: 30px;
+            }
+            #content{
+                border: 1px solid red;
+            }
+    </style>
+</head>
+<body>
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><img src="images/openhouse-logo.svg" alt="OpenHouse logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" aria-current="page" href="index.html">About</a>
+              <a class="nav-link" href="page.html">Team</a>
+              <a class="nav-link" href="post.html">Blog</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/hero-image.jpg" class="d-md-block w-100" height="700px" alt="background image">
+            <div class="container">
+              <div class="carousel-caption text-start col-md-5">
+                <h1>The best place to find a home</h1><br>
+                <p><a class="btn btn-md btn-primary" href="#">Get started</a></p>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+    <div class="container-fluid">
+        <div class="introBox">
+            <div class="row headerIntro">
+                <h1 class="header-mobile">For over such and such years, we’ve been the one that had the results you can count on.</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-7" id= "introPic">
+                    <img class="photo-desktop" alt="Super cool photo" data-rellax-speed="2" src="images/intro-image.jpg" width="100%" height="fixed-content">
+                    <img class="photo-mobile" alt="Super cool photo" src="images/intro-image.jpg" width="100%" height="auto">
+                    <br>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="intro">
+                        <h1 class="header-desktop">For over such and such years, we’ve been the one that had the results you can count on.</h1>
+                        <p class='text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet dui ac ex pulvinar fermentum eu auctor ex. Vestibulum at euismod dui. Etiam quis nisi quis est sagittis sollicitudin id in ipsum. Nulla euismod quis ex in egestas. Sed pulvinar cursus metus, in ultricies eros venenatis in. Vestibulum ut quam pulvinar sapien ornare pellentesque. Sed sed sagittis nunc, eget efficitur turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce euismod vitae tortor quis facilisis. Aenean vel fringilla massa. Cras faucibus lectus id semper scelerisque.</p>
+                        <p class='text'>Integer quis elementum libero, sed egestas dui. Phasellus quis mauris dignissim, rhoncus nulla eu, malesuada dui. Praesent eu nulla fermentum, imperdiet turpis sit amet, aliquet enim. Mauris gravida justo quis sem tincidunt, id auctor libero lacinia. </p>
+            
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <br>
+      <div class="container my-md-4">
+        <h1 class ="headerFeature">Features that keep you coming back</h1>
+        <div class="row">
+
+            <div class="col-md-4" >
+                <div class="feature">
+                    <div class="feature-image">
+                        <img src="images/feature-1.png" alt="Feature 1">
+                    </div>
+                    <div class="feature-copy">
+                        Objectively, the best map application for finding your perfect home
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature">
+                    <div class="feature-image">
+                        <img src="images/feature-2.png" alt="Feature 2">
+                    </div>
+                    <div class="feature-copy">
+                        Works on mobile
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature">
+                    <div class="feature-image">
+                        <img src="images/feature-3.png" alt="Feature 3">
+                    </div>
+                    <div class="feature-copy">
+                        Fast like Sonic
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe id="cartoonVideo" class="embed-responsive-item" src="https://www.youtube.com/embed/YLtFGWVWiGo" allowfullscreen></iframe>
+    
+        </div>
+    </div>
+
+      <div class="container">
+        <div class="signup-form">
+            <h1>Now that we’ve clearly convinced you about what we’re doing here, please sign up.</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet dui ac ex pulvinar fermentum eu auctor ex. Vestibulum at euismod dui. Etiam quis nisi quis est sagittis sollicitudin id in ipsum. Nulla euismod quis ex in egestas. Sed pulvinar cursus metus, in ultricies eros venenatis in. Vestibulum ut quam pulvinar sapien ornare pellentesque. Sed sed sagittis nunc, eget efficitur turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce euismod vitae tortor quis facilisis. Aenean vel fringilla massa. Cras faucibus lectus id semper scelerisque.</p>
+            <p>Integer quis elementum libero, sed egestas dui. Phasellus quis mauris dignissim, rhoncus nulla eu, malesuada dui. Praesent eu nulla fermentum, imperdiet turpis sit amet, aliquet enim. Mauris gravida justo quis sem tincidunt, id auctor libero lacinia. </p>
+
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="user-name">Name</label>
+                            <input type="text" class="form-control"  name="user-name" id="user-name" placeholder="e.g. Jesse">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="user-email">Email Address</label>
+                        <input type="email" class="form-control"  name="user-email" id="user-email" placeholder="e.g. jesse@company.com">
+                        </div>
+                    </div>  
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="user-username">Username</label>
+                            <input type="text" class="form-control"  name="user-username" id="user-username" placeholder="e.g. jesse">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="user-password">Password</label>
+                            <input type="password" class="form-control"  name="user-password" id="user-password">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary">Signup</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="checkbox" class="form-check-input" name="user-accept" id="user-accept" checked> I agree that I want you to bother me with this forever, even when it’s clearly no longer relevant (please check it anyway, yolo)
+                        </div>
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+      </div>
+
+
+          <footer>
+            <div class="row">
+                <div class="col-md-3">
+                        <div class="address">
+                            <img src="images/openhouse-logo.svg" width="140" height="auto" alt="OpenHouse logo">
+                            <div>
+                                123 Main Street,<br>Hamilton, Ontario<br>L9A 2W6
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="navigation">
+                            <nav>
+                                <div class="col-md-6 mb-3"><a href="index.html">About</a></div>
+                                <div class="col-md-6 mb-3"><a href="page.html">Team</a></div>   
+                                <div class="col-md-6 mb-3"><a href="#">Blog</a></div>
+                            </nav>
+                            <div class="col-md-6 mb-3">
+                                <div class="row">
+                                    <div class="social">
+                                        <a href="#"><img src="images/instagram.svg" width="24" height="auto" alt="Instagram icon"></a>
+                                        <a href="#"><img src="images/facebook.svg" width="24" height="auto" alt="Facebook icon"></a>
+                                        <a href="#"><img src="images/twitter.svg" width="24" height="auto" alt="Twitter icon"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </footer>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
